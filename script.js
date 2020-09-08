@@ -1,21 +1,26 @@
 var score = 0;
 var currentTime = 0;
-var currentQuestions = 0;
-var i = 0;
+var currentQuestion = 0;
 var timer;
-
+var quiz
 
 
 // Questions, choices, correct answer
 var quizQuestions = [{
-    quizTitle : "cool1",
-    questionChoices : ["hi", "i'm", "made", "up"],
-    questionAnswer : "hi",
+    title : "cool1?",
+    answerOne : "yes",
+    answerTwo : "no",
+    answerThree : "maybe",
+    answerFour : "so", 
+    correct : "yes",
 },
 {
-    quizTitle : "cool2",
-    questionChoices : ["hi", "i'm", "made", "up"],
-    questionAnswer : "i'm",
+    title : "cool2?",
+    answerOne : "no way",
+    answerTwo : "idk",
+    answerThree : "maybeidfk",
+    answerFour : "uhh", 
+    correct : "idk",
 },
 ]
 
@@ -24,6 +29,11 @@ var quizQuestions = [{
 var startButton = document.getElementById("start");
 var showQuestion = document.getElementById("hiddenQuest");
 var countdown = document.getElementById("timeLeft");
+var questionElement = document.getElementById("questions");
+var choiceA = document.getElementById("btnA");
+var choiceB = document.getElementById("btnB");
+var choiceC = document.getElementById("btnC");
+var choiceD = document.getElementById("btnD");
 
 
 startButton.addEventListener("click", startGame);
@@ -45,9 +55,29 @@ function startGame() {
             //gameOver();
         }
     }, 1000);
-    askQuestion()
-}
+    askQuestion(quizQuestions);
 
-function askQuestion() {
+function askQuestion(quizQuestions) {
+        questionElement.textContent = "";
+        questionElement.textContent = quizQuestions[currentQuestion].title;
+        choiceA.innerHTML = quizQuestions[currentQuestion].answerOne;
+        choiceB.innerHTML = quizQuestions[currentQuestion].answerTwo;
+        choiceC.innerHTML = quizQuestions[currentQuestion].answerThree;
+        choiceD.innerHTML = quizQuestions[currentQuestion].answerFour;
+        };
+        // save for next question I think : for (var i = 0; i <= 4; i++) {
 
-}
+    }    
+    //answerButtons.addEventListener("click", nextQuestion());
+ //^ try query selecter all for this to grab all the buttons. div is triggering start button.
+//function nextQuestion() {
+    //alert
+    //if correct, move on
+    //if incorrect time deducted, move on
+    //console.log("nextQ!");
+//}
+
+//function chooseQuestion () {
+   // button.addEventListener("click", console.log("goodjob"));
+
+
