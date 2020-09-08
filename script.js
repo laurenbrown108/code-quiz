@@ -69,12 +69,12 @@ function askQuestion(quizQuestions) {
 function checkUserGuess(guess) {
     rightAnswer = quizQuestions[currentQuestion].correct;
     if (guess === rightAnswer) {
-        score++;
+        score = score + 10;
         currentQuestion++;
         askQuestion(quizQuestions);
     }
     else {
-        score--;
+        currentTime = currentTime - 10;
         currentQuestion++;
         askQuestion (quizQuestions);
     }
