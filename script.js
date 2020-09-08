@@ -55,8 +55,9 @@ function startGame() {
             //gameOver();
         }
     }, 1000);
+}
     askQuestion(quizQuestions);
-
+//display question//
 function askQuestion(quizQuestions) {
         questionElement.textContent = "";
         questionElement.textContent = quizQuestions[currentQuestion].title;
@@ -64,20 +65,17 @@ function askQuestion(quizQuestions) {
         choiceB.innerHTML = quizQuestions[currentQuestion].answerTwo;
         choiceC.innerHTML = quizQuestions[currentQuestion].answerThree;
         choiceD.innerHTML = quizQuestions[currentQuestion].answerFour;
-        };
-        // save for next question I think : for (var i = 0; i <= 4; i++) {
-
-    }    
-    //answerButtons.addEventListener("click", nextQuestion());
- //^ try query selecter all for this to grab all the buttons. div is triggering start button.
-//function nextQuestion() {
-    //alert
-    //if correct, move on
-    //if incorrect time deducted, move on
-    //console.log("nextQ!");
-//}
-
-//function chooseQuestion () {
-   // button.addEventListener("click", console.log("goodjob"));
-
-
+};
+function checkUserGuess(guess) {
+    rightAnswer = quizQuestions[currentQuestion].correct;
+    if (guess === rightAnswer) {
+        score++;
+        currentQuestion++;
+        askQuestion(quizQuestions);
+    }
+    else {
+        score--;
+        currentQuestion++;
+        askQuestion (quizQuestions);
+    }
+}
