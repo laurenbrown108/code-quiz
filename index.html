@@ -10,7 +10,7 @@
 <body>
     <nav> 
         <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1">Javascript Quiz</span>
+            <span class="navbar-brand mb-0 h1">High Scores</span>
             <span class="navbar-text">
                 Time remaining: <div id="timeLeft">0</div>
               </span>
@@ -19,7 +19,13 @@
 
     <main>
         <container>
-                <button type="button" id="start" class="btn btn-primary btn-lg"> Start Game </button>
+                <div class="card" id="startQuiz">
+                    <div class="card-body"> 
+                        <h1>Welcome to JavaScript Quiz!</h1>
+                        <p> This is a short quiz designed to test your basic knowledge of Javascript. You will start with 90 minutes, but if an incorrect answer is selected, 10 seconds will be subtracted. If you run out of time, the quiz will end. Good luck!</p>
+                    
+                        <button type="button" id="start" class="btn btn-primary btn-lg"> Start Game </button>
+                </div>
         </container>
         <container>
 
