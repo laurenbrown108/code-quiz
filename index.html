@@ -25,15 +25,18 @@
             <div id="hiddenQuest">
                 <p id="questions"> question </p>
                 <div id="answers">
-                    <button id="btnA" onclick="checkUserGuess('a')"> text </button>
-                    <button id="btnB" onclick="checkUserGuess('b')"> text </button>
-                    <button id="btnC" onclick="checkUserGuess('c')"> text </button>
-                    <button id="btnD" onclick="checkUserGuess('d')"> text </button>
+                    <button id="btnA" class="answer-btn"> text </button>
+                    <button id="btnB" class="answer-btn"> text </button>
+                    <button id="btnC" class="answer-btn"> text </button>
+                    <button id="btnD" class="answer-btn"> text </button>
                 </div>
+                <p id="answerMessage"> </p>
             </div>    
+            <div id="hiddenScore">
+                <div id="scoreDisplay"> Score: <span id="score">  </span></div>
             </div>
         </container>
     </main>
-    <script src="script.js"></script>    
+    <script src="workingjs.js"></script>    
 </body>
 </html>
