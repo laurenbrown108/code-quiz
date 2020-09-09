@@ -22,18 +22,21 @@
                 <button type="button" id="start" class="btn btn-primary btn-lg"> Start Game </button>
         </container>
         <container>
-            <div id="hiddenQuest">
-                <p id="questions"> question </p>
-                <div id="answers">
-                    <button id="btnA" class="answer-btn"> text </button>
-                    <button id="btnB" class="answer-btn"> text </button>
-                    <button id="btnC" class="answer-btn"> text </button>
-                    <button id="btnD" class="answer-btn"> text </button>
+
+            <div class="card" id="hiddenQuest">
+                <div class="card-body">
+                <p class id="questions"> question </p>
+                    <div id="answers">
+                        <button id="btnA" class="answer-btn btn btn-outline-info"> text </button>
+                        <button id="btnB" class="answer-btn btn btn-outline-info"> text </button>
+                        <button id="btnC" class="answer-btn btn btn-outline-info"> text </button>
+                        <button id="btnD" class="answer-btn btn btn-outline-info"> text </button>
+                    </div>
+                    <p id="answerMessage"> </p>
                 </div>
-                <p id="answerMessage"> </p>
             </div>    
-            <div id="hiddenScore">
-                <div id="scoreDisplay"> Score: <span id="score">  </span></div>
+            <div class="card" id="hiddenScore">
+                <div class="card-body" id="scoreDisplay"> Score: <span id="score">  </span></div>
             </div>
         </container>
     </main>
