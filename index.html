@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel ="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Javascript Quiz</title>
 </head>
+
 <body>
-    <nav> 
+    <nav>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="highscores.html">High Scores</a>
             <span class="navbar-text">
                 Time remaining: <div id="timeLeft">0</div>
-              </span>
-          </nav>
+            </span>
+        </nav>
     </nav>
 
     <main>
         <container>
-                <div class="card" id="startQuiz">
-                    <div class="card-body"> 
-                        <h1>Welcome to JavaScript Quiz!</h1>
-                        <p> This is a short quiz designed to test your basic knowledge of Javascript. You will start with 90 minutes, but if an incorrect answer is selected, 10 seconds will be subtracted. If you run out of time, the quiz will end. Good luck!</p>
-                    
-                        <button type="button" id="start" class="btn btn-primary btn-lg"> Start Game </button>
+            <div class="card" id="startQuiz">
+                <div class="card-body">
+                    <h1>Welcome to JavaScript Quiz!</h1>
+                    <p> This is a short quiz designed to test your basic knowledge of Javascript. You will start with 90
+                        seconds, but if an incorrect answer is selected, 10 seconds will be subtracted. If you run out
+                        of time, the quiz will end. Good luck!</p>
+
+                    <button type="button" id="start" class="btn btn-primary btn-lg"> Start Game </button>
                 </div>
         </container>
         <container>
 
             <div class="card" id="hiddenQuest">
                 <div class="card-body">
-                <p class id="questions"> question </p>
+                    <p class id="questions"> question </p>
                     <div id="answers">
                         <button id="btnA" class="answer-btn btn btn-outline-info"> text </button>
                         <button id="btnB" class="answer-btn btn btn-outline-info"> text </button>
@@ -40,12 +45,22 @@
                     </div>
                     <p id="answerMessage"> </p>
                 </div>
-            </div>    
+            </div>
             <div class="card" id="hiddenScore">
-                <div class="card-body" id="scoreDisplay"> Score: <span id="score">  </span></div>
+                <div class="card-body">
+                    <h2 id="scoreDisplay"> Score: <span id="score"> </span></h2>
+                    <div class="input-group mb-3">
+                        <input type="text" id="user-input" class="form-control" placeholder="Player Initials, ex: LB"
+                            aria-label="Initials" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="addScore">Add</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </container>
     </main>
-    <script src="script.js"></script>    
+    <script src="script.js"></script>
 </body>
+
 </html>
