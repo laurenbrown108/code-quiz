@@ -47,9 +47,6 @@ var currentTime = 91;
 var currentQuestion = 0;
 var timer;
 
-
-var lastQuestion = quizQuestions.length
-console.log(quizQuestions.length)
 var startButton = document.getElementById("start");
 var showQuestion = document.getElementById("hiddenQuest");
 var showScore = document.getElementById("hiddenScore");
@@ -74,18 +71,18 @@ enterScore.addEventListener("click", appendScore);
 
 //Store score, goes to High Scores page
 function appendScore() {
+    var scoreList = JSON.parse(localStorage.getItem("scoreList")) || [];
     var data = {
         savedInitials: userInput.value,
         savedScore: currentScore
     }
     console.log(data);
-    var scoreList = localStorage.getItem("scoreList");
-    scoreList = JSON.parse(scoreList);
+
     scoreList = data;
-    var eachScore = JSON.stringify(scoreList);
-    localStorage.setItem("scoreList", eachScore);
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
 
     window.location.replace("./highscores.html")
+    console.log(scoreList);
 }
 
 //End game, display score
@@ -100,26 +97,26 @@ function gameOver() {
 //Compare user guess to correct answer, reveal if correct or incorrect, ask next question or end game
 function checkUserGuess() {
     var userGuess = this.textContent;
-    if (currentQuestion >= quizQuestions.length) {
-        gameOver();
-    }
-    else if (userGuess === quizQuestions[currentQuestion].correct) {
+    if (userGuess === quizQuestions[currentQuestion].correct) {
         currentTime == currentTime;
         currentScore++;
         console.log(currentScore);
-        alert("Correct Answer!")
+        //alert("Correct Answer!")
         currentQuestion++;
-        askQuestion(quizQuestions);
     }
     else {
         currentTime = currentTime - 10;
-        alert("Incorrect Answer.")
+        //alert("Incorrect Answer.")
         currentQuestion++;
-        askQuestion(quizQuestions);
+    }
+    if (currentQuestion === quizQuestions.length) {
+        gameOver();
+    } else {
+        askQuestion()
     }
 }
 //display question//
-function askQuestion(quizQuestions) {
+function askQuestion() {
 
     questionElement.textContent = quizQuestions[currentQuestion].title;
     choiceA.innerHTML = quizQuestions[currentQuestion].answerOne;
@@ -127,17 +124,16 @@ function askQuestion(quizQuestions) {
     choiceC.innerHTML = quizQuestions[currentQuestion].answerThree;
     choiceD.innerHTML = quizQuestions[currentQuestion].answerFour;
 }
-;
 
+//First question appears when user clicks start game. Timer also begins counting down.
 startButton.addEventListener("click", startGame);
 //First question appears when user clicks start game. Timer also begins counting down.
 function startGame() {
-
     startButton.style.display = "none";
     showQuestion.style.display = "block";
 
     //start timer//
-     timer = setInterval(function () {
+    timer = setInterval(function () {
         currentTime--;
         countdown.textContent = currentTime;
         if (currentTime <= 0) {
@@ -145,6 +141,6 @@ function startGame() {
             gameOver();
         }
     }, 1000);
-    askQuestion(quizQuestions);
+    askQuestion();
 
 }

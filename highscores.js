@@ -4,23 +4,16 @@ var listedScore = document.getElementById("all-scores");
 clear.addEventListener("click", clearScore);
 
 //Local Storage
-var scoreList = localStorage.getItem("scoreList");
+var scoreList = localStorage.getItem("scoreList")
 scoreList = JSON.parse(scoreList);
 
-console.log(scoreList);
-console.log(scoreList.length);
+//Add Score
+var newLi = document.createElement("li");
+newLi.innerHTML = scoreList.savedInitials + " : " + scoreList.savedScore
+console.log(newLi);
+listedScore.appendChild(newLi);
 
-//Display scores
-for (var i = 0; i < scoreList.length; i++) {
-    var newLi = document.createElement("li");
-    newLi.innerHTML = scoreList[i]
-    console.log(newLi);
-    listedScore.appendChild(newLi);
-
-
-}
-
-//clear score//
+//Clear score//
 function clearScore () {
     localStorage.clear();
     location.reload();
