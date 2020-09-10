@@ -4,7 +4,7 @@ This code quiz is designed for beginners to quickly review basic JavaScript.
 
 On the page landing, the user is given a brief description of the quiz, and a start button.
 
-![Starting page](https://laurenbrown108.github.com/code-quiz/images/startpage.png)
+![Starting page](https://github.com/laurenbrown108/code-quiz/blob/master/images/startpage.png?raw=true)
 
 When the start button is clicked, the first question appears and the timer starts. Ten seconds are knocked off the timer when the user choose the incorrect answer.
 ![First question]
