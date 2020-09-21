@@ -15,4 +15,13 @@ Once the quiz is over, the screen will display the user's final score. If the is
 The user can clear their score and/or navigate back to the quiz.
 ![Score Page](https://github.com/laurenbrown108/code-quiz/blob/master/images/scorespage.png?raw=true)
 
+
 Take the quiz: https://laurenbrown108.github.io/code-quiz/
+
+# Credits
+
+[Bootstrap] (https://getbootstrap.com/)
+
+# License 
+
+https://opensource.org/licenses/MIT
